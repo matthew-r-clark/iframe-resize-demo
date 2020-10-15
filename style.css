@@ -1,0 +1,21 @@
+html {
+  font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+}
+
+iframe {
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
