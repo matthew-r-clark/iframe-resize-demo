@@ -1,16 +1,16 @@
 html {
   font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
   font-size: 16px;
-  color: rgb(40, 40, 40);
+  color: #292b2e;
 }
 
 body {
-  background-color: #eae7dc;
+  background-color: #e7ecef;
 }
 
 .dark {
-  background-color: rgb(40, 40, 40);
-  color: #eae7dc;
+  background-color: #274c77;
+  color: #e7ecef;
 }
 
 iframe {
@@ -18,21 +18,26 @@ iframe {
   width: 100%;
   border-radius: 10px;
   background-color: white;
-  border: 1px solid rgb(40, 40, 40);
+  border: 3px solid #274c77;
 }
 
 .dark iframe {
-  border: 1px solid white;
+  border: 3px solid #f79824;
 }
 
 code {
   background-color: rgb(200, 200, 200);
   border-radius: 2px;
   padding: 0 1px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #274c77;
+  font-weight: bold;
 }
 
 .dark code {
-  background-color: rgb(60, 60, 60);
+  background-color: #2961a0;
+  color: #f79824;
 }
 
 header, footer, section {
@@ -49,7 +54,12 @@ h1 {
 h2 {
   font-size: 20px;
   margin-top: 20px;
-  text-decoration: underline;
+  font-weight: bold;
+  color: #274c77;
+}
+
+.dark h2 {
+  color: #f79824;
 }
 
 ul {
