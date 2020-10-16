@@ -1,16 +1,41 @@
 html {
   font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
   font-size: 16px;
+  color: rgb(40, 40, 40);
+}
+
+body {
+  background-color: #eae7dc;
+}
+
+.dark {
+  background-color: rgb(40, 40, 40);
+  color: #eae7dc;
 }
 
 iframe {
   margin: 10px auto;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid lightgray;
+  background-color: white;
+  border: 1px solid rgb(40, 40, 40);
 }
 
-.container {
+.dark iframe {
+  border: 1px solid white;
+}
+
+code {
+  background-color: rgb(200, 200, 200);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.dark code {
+  background-color: rgb(60, 60, 60);
+}
+
+header, footer, section {
   padding: 20px;
 }
 
@@ -30,4 +55,8 @@ h2 {
 ul {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+li {
+  line-height: 150%;
 }
