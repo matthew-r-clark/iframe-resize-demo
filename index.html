@@ -12,20 +12,44 @@
   <div class="container">
     <h1>Iframe Resize Demo</h1>
 
+    <h2>Challenges "Fake Store" Presents:</h2>
+    <ul>
+      <li>Origin differs from main site.</li>
+      <li>Site is hosted for free on Heroku so initial load delayed by several seconds.</li>
+      <li>All data is loaded through a fetch request, then html is generated dynamically through a script.</li>
+      <li>When selecting a product at the bottom of the list of all products, the iframe height would change but the viewport location does not, by default, stay focused on the iframe.</li>
+    </ul>
     <iframe src="https://mclark-fake-store.herokuapp.com"
       frameborder="0"
       scrolling="no">
     </iframe>
 
-    <iframe src="http://localhost:3001/demo_pages/menu.html"
+    <h2>Challenges "A Few Simple HTML Pages" Presents:</h2>
+    <ul>
+      <li>Origin differs from main site.</li>
+      <li>img tags are generated dynamically for each li tag, and assigned a random image URL.</li>
+      <li>Navigation results in changing pages, thus changing the currently running script.</li>
+    </ul>
+    <iframe src="https://iframe-resizer-pages-demo.netlify.app/"
       frameborder="0"
       scrolling="no">
     </iframe>
     
+    <h2>Challenges "Help Matt Get Home!" Presents:</h2>
+    <ul>
+      <li>Footer and main content are spread apart using the flexbox "space-between" style so the footer is always at the bottom of the page regardless of window size. Because of this when you increase the size of the board, then decrease it, you can't simply find the size of the body element to resize the iframe correctly. The iframe resizer always finds the most compact height possible to display all of the content.</li>
+    </ul>
     <iframe src="https://matthew-r-clark.github.io/dijkstra_implementation"
       frameborder="0"
       scrolling="no">
     </iframe>
+
+    <h2>Other notes:</h2>
+    <ul>
+      <li>Each iframe is registered upon page load, and any dynamically created/removed iframe is registered/unregistered upon relevant change to the DOM. An iframe will be excluded from registration if a height value is hard coded into the HTML, but you can also force registration by adding an additional attribute: height-dynamic="true"</li>
+      <li>Resizing the page will adjust the height of iframes to allow their content to fit.</li>
+      <li>Any click or change to the DOM within an iframe will trigger a check for a height change and update the frame if necessary. Along with this, the page will scroll so that the top of the iframe is at the top of the main window (ex. if you select a product at the end of a long product list and there is additional content below that iframe, you don't want to have to scroll back up to see the now shorter iframe content.</li>
+    </ul>
   </div>
 </body>
 </html>
