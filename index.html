@@ -20,9 +20,9 @@
       <h2>Challenges "Fake Store" Presents:</h2>
       <ul>
         <li>Origin differs from main site, preventing JavaScript from the main window from accessing the window object contained in the <code>&lt;iframe&gt;</code>.</li>
-        <li>Site is hosted for free on Heroku so initial load delayed by several seconds.</li>
-        <li>All data is loaded through a fetch request, then html is generated dynamically through a script.</li>
-        <li>When selecting a product at the bottom of the list of all products, the <code>&lt;iframe&gt;</code> height would change but the viewport location does not, by default, stay focused on the <code>&lt;iframe&gt;</code>.</li>
+        <li>Site is hosted for free on Heroku so initial load often delayed by several seconds.</li>
+        <li>All data is loaded through a fetch request, then most of the HTML is generated dynamically through a script.</li>
+        <li>When selecting a product at the bottom of the list of all products, the <code>&lt;iframe&gt;</code> may change but the viewport location does not, by default, stay focused on the <code>&lt;iframe&gt;</code>.</li>
       </ul>
       <iframe src="https://mclark-fake-store.herokuapp.com"
         frameborder="0"
@@ -46,7 +46,7 @@
     <section class="dark">
       <h2>Challenges "Help Matt Get Home!" Presents:</h2>
       <ul>
-        <li>Footer and main content are spread apart using the flexbox "space-between" style so the footer is always at the bottom of the page regardless of window size. Because of this when you increase the size of the board, then decrease it, you can't simply find the size of the body element to resize the <code>&lt;iframe&gt;</code> correctly. The <code>&lt;iframe&gt;</code> resizer always finds the most compact height possible to display all of the content.</li>
+        <li>Footer and main content are spread apart using the flexbox "space-between" style to insure the footer is always at the bottom of the page regardless of window size. Because of this when you increase the size of the board, then decrease it, you can't simply find the size of the body element to resize the <code>&lt;iframe&gt;</code> correctly. The <code>&lt;iframe&gt;</code> resizer always finds the most compact height possible to display all of the content.</li>
       </ul>
       <iframe src="https://matthew-r-clark.github.io/dijkstra_implementation"
         frameborder="0"
@@ -57,7 +57,9 @@
     <footer>
       <h2>Other notes:</h2>
       <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"><code>window.postMessage()</code></a> is used for safe cross-origin communication between different windows in the browser, allowing the main window to request height updates for <code>&lt;iframe&gt;</code> content and for an <code>&lt;iframe&gt;</code>'s window to send height updates back to the main window.</li>
         <li>Each <code>&lt;iframe&gt;</code> is registered upon page load, and any dynamically created/removed <code>&lt;iframe&gt;</code> is registered/unregistered upon relevant change to the DOM. An <code>&lt;iframe&gt;</code> will be excluded from registration if a height value is hard coded into the HTML, but you can also force registration by adding an additional attribute: height-dynamic="true"</li>
+        <li>Registered <code>&lt;iframe&gt;</code> elements are assigned a unique id, which is maintained across navigation to different pages within the <code>&lt;iframe&gt;</code>.</li>
         <li>Resizing the page will adjust the height of <code>&lt;iframes&gt;</code> to allow their content to fit.</li>
         <li>Any click or change to the DOM within an <code>&lt;iframe&gt;</code> will trigger a check for a height change and update the frame if necessary. Along with this, the page will scroll so that the top of the <code>&lt;iframe&gt;</code> is at the top of the main window (ex. if you select a product at the end of a long product list and there is additional content below that <code>&lt;iframe&gt;</code>, you don't want to have to scroll back up to see the now shorter <code>&lt;iframe&gt;</code> content.</li>
       </ul>
